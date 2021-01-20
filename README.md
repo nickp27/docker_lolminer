@@ -8,4 +8,5 @@ To do:
 amend the Dockerfile to allow for rolling updates
 provide for environmental variables rather than manual input of algo and pool options
 compile an UnRaid template
-Docker Hub link:
+
+Docker Hub link:https://hub.docker.com/repository/docker/akkipro27/docker_lolminer
