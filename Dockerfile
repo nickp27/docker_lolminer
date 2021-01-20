@@ -7,8 +7,6 @@ WORKDIR /
 # Package and dependency setup
 RUN apt update -y && apt install -y wget
 
-RUN apt-get purge ocl-icd-opencl-dev; apt-get autoremove; apt-get install ocl-icd-opencl-dev -y
-
 RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.19/lolMiner_v1.19_Lin64.tar.gz; \
 	tar -xvf lolMiner_v1.19_Lin64.tar.gz; \
 	cd /1.19; \
@@ -16,7 +14,7 @@ RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.19/
     cp ./lolMiner /usr/local/bin/lolminer
 	
 RUN cd /usr/local/cuda/lib64; \
-	ln -fs libOpenCL.so.1 libOpenCL.so
+	ln -fs libOpenCL.so.1.0.0 libOpenCL.so
 
 
 # Env setup
