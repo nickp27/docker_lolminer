@@ -15,7 +15,7 @@ RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.19/
     chmod +x ./lolMiner; \
     cp ./lolMiner /usr/local/bin/lolminer
 	
-RUN cd /usr/lib/x86_64-linux-gnu/; \
+RUN cd /usr/local/cuda/lib64; \
 	ln -fs libOpenCL.so.1.0.0 libOpenCL.so
 
 
