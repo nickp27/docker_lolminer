@@ -16,7 +16,7 @@ RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.19/
     cp ./lolMiner /usr/local/bin/lolminer
 	
 RUN cd /usr/local/cuda/lib64; \
-	ln -fs libOpenCL.so.1.0.0 libOpenCL.so
+	ln -fs libOpenCL.so.1 libOpenCL.so
 
 
 # Env setup
