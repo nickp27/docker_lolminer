@@ -7,7 +7,7 @@ WORKDIR /
 # Package and dependency setup
 RUN apt update -y && apt install -y wget
 
-RUN apt-get purge ocl-icd-opencl-dev; apt-get autoremove; apt-get install ocl-icd-opencl-dev nvidia-opencl-dev -y
+RUN apt-get install ocl-icd-opencl-dev nvidia-opencl-dev -y
 
 RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.20/lolMiner_v1.20_Lin64.tar.gz; \
 	tar -xvf lolMiner_v1.20_Lin64.tar.gz; \
@@ -19,7 +19,7 @@ RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.20/
 ENV GPU_FORCE_64BIT_PTR=0
 ENV GPU_MAX_HEAP_SIZE=100
 ENV GPU_USE_SYNC_OBJECTS=1
-ENV GPU_MAX_ALLOC_PERCENT=95
+ENV GPU_MAX_ALLOC_PERCENT=100
 ENV GPU_SINGLE_ALLOC_PERCENT=100
 
 ENTRYPOINT ["/usr/local/bin/lolminer"]
