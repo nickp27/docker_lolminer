@@ -7,7 +7,7 @@ WORKDIR /
 # Package and dependency setup
 RUN apt update -y && apt install -y wget
 
-RUN apt-get install ocl-icd-opencl-dev nvidia-opencl-dev -y
+RUN apt-get install ocl-icd-opencl-dev nvidia-opencl-dev  --no-install-recommends -y && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.20/lolMiner_v1.20_Lin64.tar.gz; \
 	tar -xvf lolMiner_v1.20_Lin64.tar.gz; \
